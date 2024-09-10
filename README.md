@@ -2,11 +2,14 @@
 
 Blogifyer is a full-featured blogging website designed to provide a seamless experience for users to create, manage, and interact with blog posts. Built using modern web technologies, Blogifyer includes robust features such as authentication, authorization, encryption, comments, file uploading, and more. The project is fully tested, optimized for performance, and ready to be deployed on AWS.
 
-![Screenshot 2024-07-04 152626](https://github.com/agrawaljai/Bloging-Website/assets/153916803/e993cb60-a529-47c0-8c89-190f5164d796)
-![Screenshot 2024-07-04 142925](https://github.com/agrawaljai/Bloging-Website/assets/153916803/5fed7479-f0ef-47e6-b475-dec354adacfe)
-![Screenshot 2024-07-04 152649](https://github.com/agrawaljai/Bloging-Website/assets/153916803/3bc11eb1-7593-49fc-8c95-14c75f156c6f)
-![Screenshot 2024-07-04 152705](https://github.com/agrawaljai/Bloging-Website/assets/153916803/d35e661f-ff06-4506-a1f1-24375191ba73)
-![Screenshot 2024-07-04 152729](https://github.com/agrawaljai/Bloging-Website/assets/153916803/43de34c9-7e1f-48fb-93d2-21c5716a6a13)
+# Preview
+
+![Screenshot 2024-09-10 165511](https://github.com/user-attachments/assets/7fa6e937-69bc-4b3f-abbd-d777e5444e92)
+![Screenshot 2024-09-10 165527](https://github.com/user-attachments/assets/1c48637d-3b36-4ca5-bb1f-84d865e29239)
+[Screenshot 2024-09-10 165709](https://github.com/user-attachments/assets/8d014d8d-6aa2-4d76-a196-5981dfd3eaa3)
+![Screenshot 2024-09-10 165618](https://github.com/user-attachments/assets/9d89c7f6-601c-45af-afd9-08e630059411)
+![Screenshot 2024-09-10 165648](https://github.com/user-attachments/assets/e11cdb91-8e7d-4a7e-a070-1091d6f6f2af)
+![Screenshot 2024-09-10 165636](https://github.com/user-attachments/assets/91e1ba5c-a265-45f7-a791-6317ce43e316)
 
 ## Table of Contents
 
