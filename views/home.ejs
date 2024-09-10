@@ -1,31 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("./partials/head") %>
-    <title>Homepage</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <%- include("./partials/head") %>
+  <title>Homepage</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #76ABAE;
+      font-weight: bolder;
+      text-align: center;
+      margin: 5vh 0;
+      font-size: 3vw;
+      text-transform: uppercase;
+    }
+
+    .home {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 5vw;
+      font-family: 'Roboto', sans-serif;
+      flex-direction: row;
+      background-color: #31363F;
+      margin: 0 5vw 5vh;
+      border-radius: 2vw;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+      margin: 15px;
+      padding: 5%;
+      width: 24rem;
+      height: 36rem;
+      max-height: 70vh;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      color: rgb(240, 240, 240);
+      background-color: #444950;
+      box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      position: absolute;
+      object-fit: cover;
+      filter: brightness(50%);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+      transition: opacity 0.2s ease-out;
+    }
+
+    .card h2 {
+      position: absolute;
+      inset: auto auto 30px 30px;
+      margin: 0;
+      transition: inset 0.3s 0.3s ease-out;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 2vw;
+    }
+
+    .card p, .card a {
+      position: absolute;
+      opacity: 0;
+      max-width: 80%;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card p {
+      inset: auto auto 80px 30px;
+      font-size: 1.5vw;
+    }
+
+    .card a {
+      inset: auto auto 40px 30px;
+      color: #76ABAE;
+      text-decoration: none;
+      font-size: 1.2vw;
+      display: flex;
+      align-items: center;
+    }
+
+    .card:hover h2 {
+      inset: auto auto 220px 30px;
+      transition: inset 0.3s ease-out;
+    }
+
+    .card:hover p, .card:hover a {
+      opacity: 1;
+      transition: opacity 0.5s 0.1s ease-in;
+    }
+
+    .card:hover img {
+      transition: opacity 0.3s ease-in;
+      opacity: 1;
+    }
+
+    .material-symbols-outlined {
+      vertical-align: middle;
+    }
+
+    
+  </style>
 </head>
 <body>
-    <%- include("./partials/nav") %>
-    <div class="container mt-3">
-        <div class="row row-cols-4">
-        <% blogs.forEach(blog => { %>
-            <div class="cols">
-            <div class="card col" style="width: 12rem;">
-                <img src="<%= blog.coverImageUrl %>" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title"><%= blog.title %></h5>
-                  <p class="card-text"><%= blog.body.substring(0,50) %>...</p>
-                  <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
-                </div>
-              </div>
-            </div>
-        <% }) %>
-    </div>
-
-    </div>
-    
-    
-    <%- include("./partials/scripts") %> 
-  
+  <%- include("./partials/nav") %>
+  <h1>BLOGS -</h1>
+  <div class="home">
+    <% blogs.forEach(blog => { %>
+      <div class="card">
+        <img src="<%= blog.coverImageUrl %>" alt="">
+        <div class="card-content">
+          <h2><%= blog.title %></h2>
+          <p><%= blog.body.substring(0,50) %>...</p>
+          <a href="/blog/<%= blog._id %>">
+            View
+            <span class="material-symbols-outlined">arrow_right_alt</span>
+          </a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+  <%- include("./partials/footer") %>
+  <%- include("./partials/scripts") %>
 </body>
 </html>

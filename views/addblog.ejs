@@ -3,40 +3,90 @@
 <head>
     <%- include("./partials/head") %>
     <title>Add New Blog</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 5vh auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .form-control {
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        
+
+        
+    </style>
 </head>
 <body>
-    <%- include("./partials/scripts") %> 
     <%- include("./partials/nav") %>
-    <div class="container mt-4">
-        <form action="/blog" method="POST" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="coverImage" class="form-label">Cover Image</label>
-                <input type="file" class="form-control" id="coverImage" name="coverImage" aria-describedby="coverImage">
-                
-              </div>
-            <div class="mb-3">
-              <label for="Title" class="form-label">Title</label>
-              <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
-              
-            </div>
-            <!-- <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-            </div>
-            
-            
-            <button type="submit" class="btn btn-primary">Submit</button> -->
-            <div class="mb-3">
-                <label for="body">Body</label>
-                <textarea name="body" class="form-control" id="body"></textarea>
 
-            </div>
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-            
-          </form>
+    <div class="content">
+        <div class="container mt-4">
+            <h1>Add New Blog</h1>
+            <form action="/blog" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="coverImage" class="form-label">Cover Image</label>
+                    <input type="file" class="form-control" id="coverImage" name="coverImage" aria-describedby="coverImage">
+                </div>
 
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
+                </div>
+
+                <div class="mb-3">
+                    <label for="body" class="form-label">Body</label>
+                    <textarea name="body" class="form-control" id="body" rows="6"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
+
+    
+    <%- include("./partials/scripts") %> 
 </body>
 </html>
