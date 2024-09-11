@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 // mongodb://127.0.0.1:27017/blogifyer
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URL)
 .then(()=> console.log("Mongo database connected successfully!"));
 
 app.set('view engine', 'ejs');
