@@ -1,17 +1,259 @@
-
-    <footer class="text-center text-white" style="background-color: #2B3035;">
-      <div class="container">
-        <section class="mb-0" style="padding: 2%">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-8">
-              <p>
-                This website is created by : Jai Agrawal
-              </p>
-              <p>
-                For any queries, feel free to contact agrawaljai399@gmail.com
-              </p>
-            </div>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <span>Blogifyer</span>
+          </a>
+          <p class="footer-tagline">Discover inspiring stories from around the world</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
           </div>
-        </section>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/category/technology">Technology</a></li>
+              <li><a href="/category/lifestyle">Lifestyle</a></li>
+              <li><a href="/category/health">Health</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="/advertise">Advertise</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/cookie-policy">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="copyright">
+        <p>&copy; <%= new Date().getFullYear() %> Blogifyer. All rights reserved.</p>
+        <p class="creator">Designed & Developed by <a href="mailto:agrawaljai399@gmail.com">Jai Agrawal</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Footer Styles */
+  .site-footer {
+    background-color: var(--primary, #2c3e50);
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    margin-top: 4rem;
+  }
+
+  .site-footer::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right bottom, transparent 49%, var(--primary, #2c3e50) 50%);
+  }
+
+  .footer-top {
+    padding: 4rem 0 3rem;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    flex: 1 1 300px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .social-link:hover {
+    background-color: var(--secondary, #3498db);
+    transform: translateY(-3px);
+  }
+
+  .footer-nav {
+    flex: 2 1 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+
+  .footer-col {
+    flex: 1 1 160px;
+  }
+
+  .footer-col h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.8rem;
+  }
+
+  .footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent, #e74c3c);
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-col li {
+    margin-bottom: 0.7rem;
+  }
+
+  .footer-col a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-col a:hover {
+    color: white;
+    transform: translateX(3px);
+  }
+
+  .footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .copyright p {
+    margin: 0;
+  }
+
+  .creator {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .creator a {
+    color: var(--secondary, #3498db);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .creator a:hover {
+    color: var(--accent, #e74c3c);
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .footer-content {
+      flex-direction: column;
+    }
+
+    .footer-nav {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-top {
+      padding: 3rem 0 2rem;
+    }
+
+    .copyright {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .site-footer::before {
+      top: -30px;
+      height: 30px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .footer-nav {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-col {
+      flex: 1 1 auto;
+    }
+  }
+</style>
