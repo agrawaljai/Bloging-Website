@@ -47,10 +47,10 @@
       position: relative;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 8rem 0;
+      padding: 6rem 0 12rem;
       text-align: center;
       clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
     
     .hero::before {
@@ -60,7 +60,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('/api/placeholder/1200/600');
+      background-image: url('https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80');
       background-size: cover;
       background-position: center;
       opacity: 0.15;
@@ -87,30 +87,71 @@
       opacity: 0.9;
     }
     
-    /* Section Headings */
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      margin: 2rem 0;
-      text-align: center;
+    .search-container {
+      max-width: 600px;
+      margin: 2rem auto 0;
       position: relative;
-      padding-bottom: 15px;
     }
     
-    .section-title:after {
-      content: '';
+    .search-box {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .search-box:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+    }
+    
+    .search-btn {
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
+      right: 5px;
+      top: 5px;
       background: var(--secondary);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      transition: var(--transition);
     }
     
-    /* Featured Article Section */
-    .featured-article {
-      margin-bottom: 4rem;
+    .search-btn:hover {
+      background: var(--primary);
+    }
+    
+    /* Category Pills */
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 3rem auto;
+      max-width: 900px;
+    }
+    
+    .category-pill {
+      background-color: white;
+      color: var(--primary);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .category-pill:hover, .category-pill.active {
+      background-color: var(--secondary);
+      color: white;
+      transform: translateY(-3px);
     }
     
     /* Blog Grid */
@@ -128,7 +169,7 @@
       box-shadow: var(--shadow);
       transition: var(--transition);
       position: relative;
-      height: 420px;
+      height: 400px;
     }
     
     .blog-card:hover {
@@ -153,7 +194,7 @@
       transform: scale(1.1);
     }
     
-    .card-tag {
+    .card-category {
       position: absolute;
       top: 15px;
       left: 15px;
@@ -304,80 +345,6 @@
       background-color: #c0392b;
     }
     
-    /* Stats Section */
-    .stats-section {
-      padding: 5rem 0;
-      background-color: var(--light);
-      margin: 4rem 0;
-    }
-    
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      text-align: center;
-    }
-    
-    .stat-item {
-      padding: 2rem;
-    }
-    
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin-bottom: 0.5rem;
-    }
-    
-    .stat-label {
-      font-size: 1rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-    
-    /* Featured Authors */
-    .authors-section {
-      margin: 5rem 0;
-    }
-    
-    .authors-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-    
-    .author-card {
-      text-align: center;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    
-    .author-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    }
-    
-    .author-profile {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 1rem;
-    }
-    
-    .author-title {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    
-    .author-bio {
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-    
     /* Pagination */
     .pagination {
       display: flex;
@@ -421,21 +388,17 @@
     /* Responsive */
     @media (max-width: 992px) {
       .hero {
-        padding: 5rem 0;
+        padding: 5rem 0 10rem;
       }
       
       .hero h1 {
         font-size: 3rem;
       }
-      
-      .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
     
     @media (max-width: 768px) {
       .hero {
-        padding: 4rem 0;
+        padding: 4rem 0 8rem;
       }
       
       .hero h1 {
@@ -468,14 +431,6 @@
         border-radius: 50px;
         padding: 1rem;
       }
-      
-      .featured-article .blog-card {
-        display: block !important;
-      }
-      
-      .featured-article .card-img-container {
-        height: 200px !important;
-      }
     }
     
     @media (max-width: 576px) {
@@ -487,8 +442,15 @@
         grid-template-columns: 1fr;
       }
       
-      .stats-container {
-        grid-template-columns: 1fr;
+      .categories {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        margin: 2rem 0;
+      }
+      
+      .category-pill {
+        flex-shrink: 0;
       }
     }
   </style>
@@ -501,20 +463,35 @@
     <div class="hero-content">
       <h1>Discover Inspiring Stories</h1>
       <p>Explore thought-provoking articles from writers around the world</p>
+      
+      <div class="search-container">
+        <form action="/search" method="GET">
+          <input type="text" class="search-box" placeholder="Search for articles, topics, or authors..." name="query">
+          <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
     </div>
   </header>
   
   <div class="container">
-    <!-- Editor's Picks Section -->
-    <h2 class="section-title animate__animated animate__fadeInUp">Editor's Picks</h2>
+    <!-- Categories -->
+    <div class="categories animate__animated animate__fadeInUp">
+      <a href="/" class="category-pill active">All</a>
+      <a href="/category/technology" class="category-pill">Technology</a>
+      <a href="/category/lifestyle" class="category-pill">Lifestyle</a>
+      <a href="/category/travel" class="category-pill">Travel</a>
+      <a href="/category/health" class="category-pill">Health</a>
+      <a href="/category/business" class="category-pill">Business</a>
+      <a href="/category/science" class="category-pill">Science</a>
+    </div>
     
     <!-- Featured Article (First blog post highlighted) -->
     <% if (blogs.length > 0) { %>
       <div class="featured-article fade-in">
         <div class="blog-card" style="display: grid; grid-template-columns: 1fr 1fr; height: auto; max-height: none; width: 100%;">
           <div class="card-img-container" style="height: 100%;">
-            <img src="<%= blogs[0].coverImageUrl || '/api/placeholder/600/800' %>" alt="<%= blogs[0].title %>" class="card-img">
-            <span class="card-tag">Featured</span>
+            <img src="<%= blogs[0].coverImageUrl %>" alt="<%= blogs[0].title %>" class="card-img">
+            <span class="card-category">Featured</span>
           </div>
           <div class="card-content" style="padding: 2rem;">
             <span class="card-date"><i class="far fa-calendar-alt"></i> <%= new Date(blogs[0].createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %></span>
@@ -530,225 +507,30 @@
           </div>
         </div>
       </div>
-    <% } else { %>
-      <div class="featured-article fade-in">
-        <div class="blog-card" style="display: grid; grid-template-columns: 1fr 1fr; height: auto; max-height: none; width: 100%;">
-          <div class="card-img-container" style="height: 100%;">
-            <img src="/api/placeholder/600/800" alt="Featured Post" class="card-img">
-            <span class="card-tag">Featured</span>
-          </div>
-          <div class="card-content" style="padding: 2rem;">
-            <span class="card-date"><i class="far fa-calendar-alt"></i> April 15, 2025</span>
-            <h2 class="card-title" style="font-size: 1.8rem; -webkit-line-clamp: 3;">The Evolution of Modern Photography in Digital Age</h2>
-            <p class="card-excerpt" style="-webkit-line-clamp: 5;">Photography has undergone a radical transformation in the digital age. From film cameras to smartphones, the art of capturing moments has become more accessible than ever. This article explores how modern technology has revolutionized photography while still preserving its artistic essence...</p>
-            <a href="#" class="card-link">
-              Continue Reading <i class="fas fa-arrow-right"></i>
-            </a>
-            <div class="card-author">
-              <img src="/img/default-avatar.jpg" alt="Author" class="author-img">
-              <span class="author-name">Emma Wilson</span>
-            </div>
-          </div>
-        </div>
-      </div>
     <% } %>
-    
-    <!-- Stats Section -->
-    <section class="stats-section fade-in">
-      <div class="container">
-        <div class="stats-container">
-          <div class="stat-item">
-            <div class="stat-number">5K+</div>
-            <div class="stat-label">Articles</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">120+</div>
-            <div class="stat-label">Authors</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">1.2M</div>
-            <div class="stat-label">Monthly Readers</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">40+</div>
-            <div class="stat-label">Countries</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Latest Stories -->
-    <h2 class="section-title fade-in">Latest Stories</h2>
     
     <!-- Blog Grid -->
     <div class="blog-grid">
-      <% if (blogs.length > 1) { %>
-        <% blogs.slice(1).forEach(blog => { %>
-          <div class="blog-card fade-in">
-            <div class="card-img-container">
-              <img src="<%= blog.coverImageUrl || '/api/placeholder/400/300' %>" alt="<%= blog.title %>" class="card-img">
-              <span class="card-tag">New</span>
-            </div>
-            <div class="card-content">
-              <span class="card-date"><i class="far fa-calendar-alt"></i> <%= new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %></span>
-              <h2 class="card-title"><%= blog.title %></h2>
-              <p class="card-excerpt"><%= blog.body.substring(0, 100) %>...</p>
-              <a href="/blog/<%= blog._id %>" class="card-link">
-                Read More <i class="fas fa-arrow-right"></i>
-              </a>
-              <div class="card-author">
-                <img src="/img/default-avatar.jpg" alt="Author" class="author-img">
-                <span class="author-name"><%= blog.author || 'Anonymous' %></span>
-              </div>
-            </div>
-          </div>
-        <% }) %>
-      <% } else { %>
-        <!-- Sample blog cards if no actual blogs exist -->
+      <% blogs.slice(1).forEach(blog => { %>
         <div class="blog-card fade-in">
           <div class="card-img-container">
-            <img src="/api/placeholder/400/300" alt="Business Strategy" class="card-img">
-            <span class="card-tag">Business</span>
+            <img src="<%= blog.coverImageUrl %>" alt="<%= blog.title %>" class="card-img">
+            <span class="card-category"><%= blog.category || 'General' %></span>
           </div>
           <div class="card-content">
-            <span class="card-date"><i class="far fa-calendar-alt"></i> April 12, 2025</span>
-            <h2 class="card-title">5 Business Strategies That Will Transform Your Company</h2>
-            <p class="card-excerpt">In today's competitive market, implementing the right business strategies can make all the difference between success and failure...</p>
-            <a href="#" class="card-link">
+            <span class="card-date"><i class="far fa-calendar-alt"></i> <%= new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %></span>
+            <h2 class="card-title"><%= blog.title %></h2>
+            <p class="card-excerpt"><%= blog.body.substring(0, 100) %>...</p>
+            <a href="/blog/<%= blog._id %>" class="card-link">
               Read More <i class="fas fa-arrow-right"></i>
             </a>
             <div class="card-author">
               <img src="/img/default-avatar.jpg" alt="Author" class="author-img">
-              <span class="author-name">John Doe</span>
+              <span class="author-name"><%= blog.author || 'Anonymous' %></span>
             </div>
           </div>
         </div>
-        
-        <div class="blog-card fade-in">
-          <div class="card-img-container">
-            <img src="/api/placeholder/400/300" alt="Meditation" class="card-img">
-            <span class="card-tag">Wellness</span>
-          </div>
-          <div class="card-content">
-            <span class="card-date"><i class="far fa-calendar-alt"></i> April 10, 2025</span>
-            <h2 class="card-title">The Science Behind Meditation and Mindfulness</h2>
-            <p class="card-excerpt">Discover how daily meditation practices can rewire your brain and improve overall mental health according to recent studies...</p>
-            <a href="#" class="card-link">
-              Read More <i class="fas fa-arrow-right"></i>
-            </a>
-            <div class="card-author">
-              <img src="/img/default-avatar.jpg" alt="Author" class="author-img">
-              <span class="author-name">Sarah Johnson</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="blog-card fade-in">
-          <div class="card-img-container">
-            <img src="/api/placeholder/400/300" alt="Travel" class="card-img">
-            <span class="card-tag">Travel</span>
-          </div>
-          <div class="card-content">
-            <span class="card-date"><i class="far fa-calendar-alt"></i> April 8, 2025</span>
-            <h2 class="card-title">Hidden Gems: Unexplored Destinations in Southeast Asia</h2>
-            <p class="card-excerpt">Beyond the tourist hotspots lie breathtaking locations that few travelers have discovered. Join us as we explore these hidden paradises...</p>
-            <a href="#" class="card-link">
-              Read More <i class="fas fa-arrow-right"></i>
-            </a>
-            <div class="card-author">
-              <img src="/img/default-avatar.jpg" alt="Author" class="author-img">
-              <span class="author-name">Michael Chang</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="blog-card fade-in">
-          <div class="card-img-container">
-            <img src="/api/placeholder/400/300" alt="Technology" class="card-img">
-            <span class="card-tag">Tech</span>
-          </div>
-          <div class="card-content">
-            <span class="card-date"><i class="far fa-calendar-alt"></i> April 5, 2025</span>
-            <h2 class="card-title">The Future of AI in Everyday Applications</h2>
-            <p class="card-excerpt">Artificial intelligence is no longer confined to research labs. Here's how it's revolutionizing our daily lives in ways you might not expect...</p>
-            <a href="#" class="card-link">
-              Read More <i class="fas fa-arrow-right"></i>
-            </a>
-            <div class="card-author">
-              <img src="/img/default-avatar.jpg" alt="Author" class="author-img">
-              <span class="author-name">Alex Rivera</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="blog-card fade-in">
-          <div class="card-img-container">
-            <img src="/api/placeholder/400/300" alt="Food" class="card-img">
-            <span class="card-tag">Culinary</span>
-          </div>
-          <div class="card-content">
-            <span class="card-date"><i class="far fa-calendar-alt"></i> April 3, 2025</span>
-            <h2 class="card-title">Farm to Table: A Sustainable Approach to Modern Dining</h2>
-            <p class="card-excerpt">The farm-to-table movement is transforming how we think about food sustainability, quality, and supporting local economies...</p>
-            <a href="#" class="card-link">
-              Read More <i class="fas fa-arrow-right"></i>
-            </a>
-            <div class="card-author">
-              <img src="/img/default-avatar.jpg" alt="Author" class="author-img">
-              <span class="author-name">Olivia Chen</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="blog-card fade-in">
-          <div class="card-img-container">
-            <img src="/api/placeholder/400/300" alt="Art" class="card-img">
-            <span class="card-tag">Arts</span>
-          </div>
-          <div class="card-content">
-            <span class="card-date"><i class="far fa-calendar-alt"></i> April 1, 2025</span>
-            <h2 class="card-title">Contemporary Art Movements Shaping This Decade</h2>
-            <p class="card-excerpt">From digital installations to sustainable art practices, explore the movements that are defining the artistic landscape of our time...</p>
-            <a href="#" class="card-link">
-              Read More <i class="fas fa-arrow-right"></i>
-            </a>
-            <div class="card-author">
-              <img src="/img/default-avatar.jpg" alt="Author" class="author-img">
-              <span class="author-name">David Kim</span>
-            </div>
-          </div>
-        </div>
-      <% } %>
-    </div>
-    
-    <!-- Featured Authors Section -->
-    <h2 class="section-title fade-in">Meet Our Contributors</h2>
-    <div class="authors-section">
-      <div class="authors-grid">
-        <div class="author-card fade-in">
-          <img src="/api/placeholder/200/200" alt="Author" class="author-profile">
-          <h3 class="author-title">Emma Wilson</h3>
-          <p class="author-bio">Travel writer and photographer with a passion for exploring off-the-beaten-path destinations.</p>
-        </div>
-        
-        <div class="author-card fade-in">
-          <img src="/api/placeholder/200/200" alt="Author" class="author-profile">
-          <h3 class="author-title">James Rodriguez</h3>
-          <p class="author-bio">Tech journalist specializing in emerging technologies and their societal impact.</p>
-        </div>
-        
-        <div class="author-card fade-in">
-          <img src="/api/placeholder/200/200" alt="Author" class="author-profile">
-          <h3 class="author-title">Sophia Chen</h3>
-          <p class="author-bio">Culinary expert and food critic exploring global cuisines and cooking techniques.</p>
-        </div>
-        
-        <div class="author-card fade-in">
-          <img src="/api/placeholder/200/200" alt="Author" class="author-profile">
-          <h3 class="author-title">Marcus Johnson</h3>
-          <p class="author-bio">Business strategist and entrepreneur sharing insights on sustainable business practices.</p>
-        </div>
-      </div>
+      <% }) %>
     </div>
     
     <!-- Pagination -->
@@ -801,6 +583,12 @@
           }
         });
       }
+      
+      // Category pill active state
+      $('.category-pill').click(function() {
+        $('.category-pill').removeClass('active');
+        $(this).addClass('active');
+      });
     });
   </script>
 </body>
